@@ -1,0 +1,596 @@
+body {
+    margin: 0; /* odstrani medzeru mezdi vrchom a headerom */
+    padding: 0; /* odstrani medzeru mezdi bokom a headerom*/
+
+    background-color: rgb(255, 255, 255);
+    background-color: transparent;
+    
+}
+
+#header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color:rgb(200, 200, 200);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+#logoimg
+{
+    height: 50px;
+    width: 250px;
+}
+
+.profil
+{
+    width: 30px;
+    height: 30px;
+}
+
+.kosik
+{
+    width: 30px;
+    height: 30px;
+
+}
+
+#navbar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li
+{
+    list-style: none;
+    padding: 0 20px;
+}
+
+#navbar li a
+{
+    font-family: "Poppins", sans-serif;
+    text-decoration: none; /*ziadne podcarknutie slova*/
+    font-size: 20px; /*zmena velkosti slov*/
+    font-weight: bold;
+    color: rgb(0, 0, 0.3);
+    transition: 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#navbar li a:hover,
+#navbar li a.active
+{
+    color: rgb(119, 0, 184); /*zmena farby pisma ked nan najdem kurzorom*/
+}
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+
+/*------------------footer-----------------*/
+.footer{
+	background-color: rgb(200, 200, 200);
+    padding: 70px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #000000;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #9000a0;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #000000;
+	text-decoration: none;
+	font-weight: 300;
+	color: #000000;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #83009a;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgb(255, 255, 255);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #000000;
+	transition: all 0.5s ease;
+}
+
+/*iconky */
+.footer-col .social-links a:hover{
+	color: #ffffff;
+	background-color: rgb(119, 0, 184);
+}
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+/*----------uvodna stranka----------*/
+.homepageimg
+{
+    opacity: 0,5;
+    width: 900px;
+}
+
+.homepagetext
+{
+    font-family: "Poppins", sans-serif;
+    margin-top: 300px;
+    margin-left: 900px;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    color: #9000a0;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+}
+
+.homepagebutton
+{
+    font-family: "Poppins", sans-serif;
+    width: 300px;
+    height: 50px;
+    color:white;
+    background-color: #9000a0;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    margin-right: 50px;
+    margin-left: 910px;
+    margin-top: 0px ;
+    border: none;
+    border-radius: 50px;
+}
+/*---------------------Produkty-------------------------*/
+
+.Produkty
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.ProductCards
+{
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.4s;
+    background: white;
+}
+
+.ProductCards:hover
+{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+    0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+.productcardimg
+{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.productinfo
+{
+    text-align: center;
+    color: rgb(83, 83, 83);
+    padding-top: 0 8px;
+}
+
+.productprice
+{
+    font-size: 26px;
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+
+.productratings
+{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+
+li
+{
+   padding-top: 5px;
+}
+
+.fa
+{
+    font-size: 26px;
+    transition: 0.4s;
+    margin: 3px;
+}
+
+.checked
+{
+    color: gold;
+}
+
+.fa:hover
+{
+   transform: scale(1.3);
+   transition: .6s; 
+}
+
+.buybtn
+{
+    text-align: center;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #9000a0;
+}
+
+@media(max-width:1000px)
+{
+    .ProductCards
+    {
+        width: 45px;
+    }
+}
+
+@media(max-width:750px)
+{
+    .ProductCards
+    {
+        width: 100%;
+    }
+}
+
+
+
+
+/*---------------------vyhladavanie---------------------*/
+.search
+{
+    --padding: 5px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 5px;
+    background: white;
+}
+
+.search-input
+{
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color:#000000;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+
+
+#hero
+{
+   font-size: 20px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*-----------INfo---------------*/
+.InfoP
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.Info2
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.Info3
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+.onash1
+{
+    margin-top: 150px;
+    margin-left: 200px;
+
+}
+
+.Small-container
+{
+    
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-4
+{
+    flex-basis: 25%;
+    padding: 0px;
+    min-width: 0px;
+    margin-bottom: 50px;
+    
+}
+
+.col-4 img
+{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    width: 200px;
+}
+
+#heroProducts
+{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    justify-content: center;
+    gap: 100px;
+    display: flex;
+    text-decoration: none;
+    
+}
+
+/*-------------prihlasenie------------------*/
+.account-page
+{
+    padding:  50px 0;
+    background-color:rgb(255, 255, 255);
+}
+
+.col-2
+{
+    padding-left: 100px;
+    padding-right: 0px;
+}
+
+.form-container
+{
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
+    overflow: hidden;
+  
+}
+
+.form-container span
+{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+    
+}
+
+.form-btn
+{
+    display: inline-block;
+}
+
+.form-container form
+{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+    
+}
+
+form input
+{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+
+form .btn
+{
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    color: #fff;
+    background-color:#9000a0;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+form .btn:focus
+{
+    outline: none;
+}
+
+#Loginform
+{
+    left: -300px;
+    
+}
+
+#Registerform
+{
+    left: 0;
+}
+
+form a
+{
+    color: #9000a0;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    
+    
+}
+
+#Indicator
+{
+    width: 100px;
+    border: none;
+    background: #9000a0;
+    height: 3px;
+    margin-top: 8px;
+    transform: translate(100px);
+    transition: transform 1s;
+
+}
+
+#produktyh1
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.btnimg
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+.btnprodukty
+{
+    height: 70px;
+    width: 150px;
+    background-color: #9000a0;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    
+}
+
+.txtbtnproduct
+{
+    
+    margin-right: 10px;
+    
+}
+
+.txtallproducts
+{
+    margin-top: 40px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    margin-bottom: 40px;
+
+}
