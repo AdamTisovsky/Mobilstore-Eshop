@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@yield('title', 'MOBILSTORE.SK')</title>
 
     <!-- Stylesheets -->
@@ -14,7 +15,6 @@
     <!-- Custom Styles -->
     <style>
         body {
-            background-image: url({{ asset('images/mobily-do-100-eur-removebg.png') }}); 
             background-size: 1000px; 
             background-position: left; 
             background-repeat: no-repeat; 
@@ -28,7 +28,9 @@
 
     <!-- Header Section -->
     <section id="header">
-        <a href="{{ url('/home') }}"><img id="logoimg" src="{{ asset('images/logo43.png') }}" class="logo" alt="Logo"></a>
+    <a href="{{ url('/home') }}">
+        <img id="logoimg" src="{{ asset('images\logo43.png') }}" class="logo" alt="Logo">
+    </a>
 
         <form>
             <div class="search">
@@ -39,10 +41,17 @@
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="{{ url('/home') }}">DOMOV</a></li>
+                <li><a class="active" href="{{ url('/') }}">DOMOV</a></li>
                 <li><a href="{{ url('/products') }}">PRODUKTY</a></li>
+                <li><a href="{{ url('/adminpanel') }}">ADMIN</a></li>
                 <li><a href="{{ url('/info') }}">INFO</a></li>
+                @guest
+                <!-- Ak používateľ nie je prihlásený -->
+                <li><a href="{{ route('login') }}">PRIHLÁSIŤ SA</a></li>
+                @else
+                <!-- Ak je používateľ prihlásený -->
                 <li><a href="{{ url('/profile') }}">PROFIL</a></li>
+                @endguest
                 <li><a href="{{ url('/cart') }}">KOŠIK</a></li>
             </ul>
         </div>

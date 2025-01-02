@@ -4,7 +4,7 @@
 
 @section('content')
 <section id="Homepage">
-    <img class="homepageimg" src="{{ asset('images/placeholder.png') }}">
+    <img class="homepageimg" src="{{ asset('images/mobily-do-100-eur-removebg.png') }}">
     <div class="col-2">
         <p class="homepagetext">PRESKÚMAJTE NAŠE PRODUKTY</p>
         <a href="{{ url('/products') }}">
