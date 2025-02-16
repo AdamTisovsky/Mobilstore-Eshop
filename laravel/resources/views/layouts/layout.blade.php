@@ -41,16 +41,22 @@
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="{{ url('/') }}">DOMOV</a></li>
+                <li><a href="{{ url('/home') }}">DOMOV</a></li>
                 <li><a href="{{ url('/products') }}">PRODUKTY</a></li>
-                <li><a href="{{ url('/adminpanel') }}">ADMIN</a></li>
+                
+                @auth
+                    @if(auth()->user()->is_admin)
+                        <li><a href="{{ url('/adminpanel') }}">ADMIN</a></li>
+                        <li><a href="{{ url('/addproduct') }}">ADDPRODUCT</a></li>
+                    @endif
+                 @endauth
                 <li><a href="{{ url('/info') }}">INFO</a></li>
                 @guest
                 <!-- Ak používateľ nie je prihlásený -->
                 <li><a href="{{ route('login') }}">PRIHLÁSIŤ SA</a></li>
                 @else
                 <!-- Ak je používateľ prihlásený -->
-                <li><a href="{{ url('/profile') }}">PROFIL</a></li>
+                <li><a href="{{ url('/profilepage') }}">PROFIL</a></li>
                 @endguest
                 <li><a href="{{ url('/cart') }}">KOŠIK</a></li>
             </ul>
@@ -69,14 +75,14 @@
                 <div class="footer-col">
                     <h4>Firma</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
+                    <li><a href="{{ url('/info') }}">O nás</a></li>
+                        <li><a href="#">Naše služby</a></li>
                         <li><a href="#">privacy policy</a></li>
                         <li><a href="#">affiliate program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>get help</h4>
+                    <h4>Info</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">shipping</a></li>
@@ -88,10 +94,10 @@
                 <div class="footer-col">
                     <h4>online shop</h4>
                     <ul>
-                        <li><a href="#">watch</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
+                        <li><a href="#">Mobily</a></li>
+                        <li><a href="#">Monitory</a></li>
+                        <li><a href="#">Notebooky</a></li>
+                        <li><a href="#">Televízie</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

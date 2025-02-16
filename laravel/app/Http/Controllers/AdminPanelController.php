@@ -9,14 +9,16 @@ class AdminPanelController extends Controller
 {
     public function index()
     {
-        return view('adminpanel');
+        $users = User::all();
+        return view('adminpanel', compact('users'));
     }
 
     public function adminPanel()
     {
-    $users = User::all(); // Retrieve all users from the database
-    return view('adminpanel', compact('users')); // Pass the $users variable to the view
-    }   
+    $users = User::all(); 
+    return view('adminpanel', compact('users')); 
+    }
+    
 }
 
 

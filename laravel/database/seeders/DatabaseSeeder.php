@@ -8,8 +8,11 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
 
-    public function run()
+public function run(): void
 {
     $this->call(ProductSeeder::class);
+    $this->call([
+        CartSeeder::class,
+    ]);
 }
 }

@@ -30,7 +30,7 @@
                         <!-- Register Form -->
                         <form id="Registerform" action="{{ route('register') }}" method="POST">
                             @csrf
-                            <input type="text" name="name" placeholder="Meno" required>
+                            <input type="text" name="username" placeholder="Meno" required>
                             <input type="email" name="email" placeholder="Email" required>
                             <input type="password" name="password" placeholder="Heslo" required>
                             <button type="submit" class="btn">Registrovat sa</button>

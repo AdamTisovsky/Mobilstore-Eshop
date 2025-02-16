@@ -195,8 +195,53 @@ class ProductSeeder extends Seeder
                 'category_id' => 4,
                 'created_at' => now(),
                 'updated_at' => now()
+            ],
+            [
+                'name' => 'Samsung Galaxy S24 Ultra S928B 12GB/256GB',
+                'description' => 'The Samsung Galaxy S24 Ultra S928B is a premium flagship smartphone featuring a 6.8-inch Dynamic AMOLED 2X display with a 120Hz refresh rate and QHD+ resolution.',
+                'price' => 1200.00,
+                'stock' => 6,
+                'category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Samsung Galaxy A55',
+                'description' => 'The Samsung Galaxy A55 5G is a mid-range smartphone with a 6.6-inch 120Hz Super AMOLED display, Exynos 1480 processor, and up to 12GB RAM.',
+                'price' => 350.00,
+                'stock' => 7,
+                'category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Samsung Galaxy A35',
+                'description' => 'The Samsung Galaxy A35 5G, released in March 2024, is a mid-range smartphone featuring a 6.6-inch Super AMOLED display with a 120Hz refresh rate.',
+                'price' => 270.00,
+                'stock' => 16,
+                'category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Samsung Galaxy S23',
+                'description' => 'The Samsung Galaxy S23 is a compact flagship smartphone with a 6.1-inch Dynamic AMOLED 2X display (120Hz), powered by the Snapdragon 8 Gen 2 for Galaxy.',
+                'price' => 800.00,
+                'stock' => 6,
+                'category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Samsung Galaxy S25 Ultra',
+                'description' => 'The Samsung Galaxy S25 Ultra, announced on January 22, 2025, and released on February 7, 2025, is Samsungs latest flagship smartphone, emphasizing advanced AI integration and enhanced hardware features.',
+                'price' => 1700.00,
+                'stock' => 10,
+                'category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
             ]
-
+            
         ]);
     }
 }
