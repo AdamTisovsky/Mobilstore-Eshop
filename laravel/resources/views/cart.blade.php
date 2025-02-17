@@ -42,6 +42,6 @@
         </tbody>
     </table>
     <div class="cart-total">Spolu: €{{ number_format($totalPrice, 2) }}</div>
-    <a href="{{ route('home') }}" class="checkout-btn">Dokončiť objednávku</a>
+    <a href="{{ route('payment') }}" class="checkout-btn">Dokončiť objednávku</a>
 </div>
 @endsection

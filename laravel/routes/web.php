@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfilePageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailPageController;
@@ -36,6 +37,8 @@ Route::post('/addproduct', [AddProductController::class, 'index'])->name('addpro
 Route::post('/cart/buy-now/{id}', [CartController::class, 'buyNow'])->name('cart.buyNow');
 Route::get('/product/{id}', [DetailPageController::class, 'show'])->name('product.show');
 Route::get('/product/{id}', [ProductsController::class, 'show'])->name('product.show');
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+Route::post('/addproduct', [ProductsController::class, 'store'])->name('addproduct');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

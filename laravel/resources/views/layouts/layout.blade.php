@@ -47,7 +47,6 @@
                 @auth
                     @if(auth()->user()->is_admin)
                         <li><a href="{{ url('/adminpanel') }}">ADMIN</a></li>
-                        <li><a href="{{ url('/addproduct') }}">ADDPRODUCT</a></li>
                     @endif
                  @endauth
                 <li><a href="{{ url('/info') }}">INFO</a></li>

@@ -238,8 +238,14 @@ ul{
     border: none;
     cursor: pointer;
     border-radius: 50px;
-   
 }
+
+.homepagebutton:hover
+{
+    background: rgb(170, 1, 170);
+}
+   
+
 @media (min-width: 768px) {
     #Homepage {
         flex-direction: row;
@@ -1143,44 +1149,199 @@ img{
     }
 }
 
-.Addproductbtn
-{
-    background-color: purple;
-    color: white;
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 50px;
-    
-}
 
-.adminProduct
-{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.AddProducth
-{
-    margin-top: 50px;
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.form-control
-{
-    width: 100%;
-    margin-bottom: 10px;
-}
 
 .cart-product-img {
     width: 70px;  /* Nastav menšiu šírku */
     height: 70px; /* Nastav menšiu výšku */
     object-fit: contain; /* Zabezpečí, že obrázok nebude orezaný */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*dokoncenie objednavky*/
+
+.order-form {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form-button {
+    background: purple;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-button:hover {
+    background: rgb(170, 1, 170);
+}
+
+@media (max-width: 600px) {
+    .order-form {
+        flex-direction: column;
+    }
+    .form-group {
+        width: 100%;
+    }
+}
+
+
+
+
+/*addproduct*/
+
+.product-form-container {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.product-form {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    font-weight: bold;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    flex: 1 1 calc(50% - 10px);
+    min-width: 200px;
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+.product-form button {
+    margin-top: 15px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: purple;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.product-form button:hover {
+    background-color: rgb(208, 1, 208);
+}
+
+@media (max-width: 600px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+
+
+
+.adminbutony
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.adminlinkbuton
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    margin: bottom 0px; ;
+    justify-content: space-between;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    justify-self: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+}
+
+.adminlinkbuton:hover
+{
+    background-color: rgb(180, 0, 180);
 }

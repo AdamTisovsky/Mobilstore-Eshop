@@ -4,8 +4,16 @@
 
 @section('content')
 
+
+<section class="adminbutony">
+    <a href="{{ route('addproduct') }}"><button class="adminlinkbuton">Pridať produkt</button></a>
+    <a href="{{ route('addproduct') }}"><button class="adminlinkbuton">Objednávky</button></a>
+</section>
+
 <section id="admin-panel">
     <h1 class="admin-heading">ADMIN PANEL</h1>
+
+    
 
     <table class="user-table">
     <thead>
