@@ -15,30 +15,16 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         DB::table('customers')->insert([
+              
                 [
-                    'user_id' => 10, 
-                    'first_name' => 'Peter',
-                    'last_name' => 'Novák',
-                    'phone' => '+421912345678',
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
-                [
-                    'user_id' => 12, 
+                    'user_id' => 22, 
                     'first_name' => 'Jana',
                     'last_name' => 'Kováčová',
                     'phone' => '+421911987654',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
-                [
-                    'user_id' => 17, 
-                    'first_name' => 'Marek',
-                    'last_name' => 'Horák',
-                    'phone' => '+421902345678',
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
+                
             ]);
     }
 }

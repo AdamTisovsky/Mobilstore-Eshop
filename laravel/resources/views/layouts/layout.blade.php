@@ -58,6 +58,8 @@
                 <li><a href="{{ url('/profilepage') }}">PROFIL</a></li>
                 @endguest
                 <li><a href="{{ url('/cart') }}">KOŠIK</a></li>
+                <li><a href="{{ url('/ordercomplete') }}">test</a></li>
+                
             </ul>
         </div>
     </section>
@@ -107,7 +109,11 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                    <p class="footercopy">&copy;Adam Tisovský 2025</p>
                 </div>
+
+                
+
             </div>
         </div>
     </footer>

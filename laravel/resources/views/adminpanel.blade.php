@@ -20,7 +20,7 @@
         <tr>
             <th>ID</th>
             <th>Meno</th>
-            <th>Email</th>
+            <th>E-mail</th>
             <th>Akcie</th>
         </tr>
     </thead>

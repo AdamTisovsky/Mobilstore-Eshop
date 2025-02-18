@@ -21,7 +21,7 @@ class OrderSeeder extends Seeder
 
         DB::table('orders')->insert([
             [
-                'customer_id' => $customers[array_rand($customers)], // Náhodný zákazník
+                'customer_id' => 28,
                 'payment' => 'karta',
                 'shipping' => 'kurier',
                 'total' => 99.99,
@@ -29,24 +29,8 @@ class OrderSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            [
-                'customer_id' => $customers[array_rand($customers)],
-                'payment' => 'karta',
-                'shipping' => 'kurier',
-                'total' => 150.50,
-                'status' => 'Doručené',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'customer_id' => $customers[array_rand($customers)],
-                'payment' => 'karta',
-                'shipping' => 'kurier',
-                'total' => 200.00,
-                'status' => 'Doručené',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+           
+         
         ]);
     }
 }

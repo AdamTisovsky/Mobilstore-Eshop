@@ -25,4 +25,15 @@ class Customer extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
+

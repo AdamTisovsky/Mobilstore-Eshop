@@ -75,18 +75,27 @@ class ProductsController extends Controller
                 ]);
             }
         }
-    
+
+            // Uloženie obrázka
         // Uloženie obrázka
-        if ($request->hasFile('obrazok')) {
-            $path = $request->file('obrazok')->store('product_images', 'public');
-    
-            Image::create([
-                'product_id' => $product->id,
-                'image_path' => $path,
-            ]);
-        }
-    
-        return redirect()->back()->with('success', 'Produkt bol úspešne pridaný.');
+if ($request->hasFile('obrazok')) {
+    // Získanie pôvodného názvu súboru
+    $fileName = $request->file('obrazok')->getClientOriginalName();
+
+    // Uloženie obrázka do priečinka /app/public/images
+    $request->file('obrazok')->storeAs('images', $fileName, 'public');
+
+    // Uloženie len názvu súboru do databázy
+    Image::create([
+        'product_id' => $product->id,
+        'image_path' => $fileName, // Ukladáme len názov súboru
+    ]);
+}
+
+return redirect()->back()->with('success', 'Produkt bol úspešne pridaný.');
+
+
+
     }
     
     

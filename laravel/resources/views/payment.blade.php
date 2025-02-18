@@ -20,10 +20,12 @@
             <input type="tel" id="telefon" name="telefon" class="form-input" required>
         </div>
 
+        @if(!Auth::check())
         <div class="form-group">
             <label for="email" class="form-label">E-mail:</label>
             <input type="email" id="email" name="email" class="form-input" required>
         </div>
+        @endif
         
         <div class="form-group">
             <label for="krajina" class="form-label">Krajina:</label>
@@ -51,23 +53,24 @@
         </div>
         
         <div class="form-group full-width">
-            <label for="platba" class="form-label">Spôsob platby:</label>
-            <select id="platba" name="platba" class="form-select" required>
-            <option value="dobierka">Hotovosť</option>
+            <label for="payment" class="form-label">Spôsob platby:</label>
+            <select id="payment" name="payment" class="form-select" required>
+                <option value="dobierka">Hotovosť</option>
                 <option value="karta">Platba kartou</option>
             </select>
         </div>
         
         <div class="form-group full-width">
-            <label for="doprava" class="form-label">Spôsob dopravy:</label>
-            <select id="doprava" name="doprava" class="form-select" required>
+            <label for="shipping" class="form-label">Spôsob dopravy:</label>
+            <select id="shipping" name="shipping" class="form-select" required>
                 <option value="kurier">Kuriér</option>
                 <option value="posta">Pošta</option>
                 <option value="osobne">Osobný odber</option>
             </select>
         </div>
         
-        <button type="submit" class="form-button">Odoslať objednávku</button>
+        <a href="{{ route('ordercomplete') }}"><button type="submit" class="form-button">Potvrdiť objednávku</button></a>
     </form>
 </div>
 @endsection
+
