@@ -67,7 +67,7 @@ Route::middleware('auth')->group(function () {
 
 /*email*/
 
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
 Route::get('/email/verify', function () {
     return view('auth.verify');
@@ -89,7 +89,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 
 
-Auth::routes();
+//Auth::routes();
 
 
 
