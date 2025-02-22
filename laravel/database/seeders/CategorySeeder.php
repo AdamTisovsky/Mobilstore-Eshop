@@ -14,7 +14,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        // Seed some example categories
         Category::create(['name' => 'Mobil']);
         Category::create(['name' => 'TV']);
         Category::create(['name' => 'Monitor']);

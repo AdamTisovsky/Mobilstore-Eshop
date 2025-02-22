@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<!-- Sekcia špecifikácií -->
+
 @if(isset($product_attributes) && count($product_attributes) > 0)
     <div class="product-specifications">
         <h2>Parametre</h2>
@@ -41,6 +41,10 @@
 @endif
 @endsection
 
+
+
+@section('scripts')
+
 <script>
     fetch('{{ asset('detail.json') }}')
     .then(response => response.json())
@@ -49,7 +53,6 @@
     });
 </script>
 
-@section('scripts')
 <script>
     let product = @json($product);
     console.log(product);

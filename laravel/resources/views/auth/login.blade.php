@@ -18,7 +18,7 @@
                             <hr id="Indicator">
                         </div>
 
-                        <!-- Login Form -->
+                     
                         <form id="Loginform" action="{{ route('login') }}" method="POST">
                             @csrf
                             <input type="text" name="email" placeholder="Email" required>
@@ -27,7 +27,7 @@
                             <a href="{{ route('password.request') }}">Zabudol si heslo?</a>
                         </form> 
 
-                        <!-- Register Form -->
+                       
                         <form id="Registerform" action="{{ route('register') }}" method="POST">
                             @csrf
                             <input type="text" name="username" placeholder="Meno" required>

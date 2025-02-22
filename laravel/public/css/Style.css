@@ -1,6 +1,6 @@
 body {
-    margin: 0; /* odstrani medzeru mezdi vrchom a headerom */
-    padding: 0; /* odstrani medzeru mezdi bokom a headerom*/
+    margin: 0;
+    padding: 0; 
 
     background-color: rgb(255, 255, 255);
     background-color: transparent;
@@ -19,54 +19,54 @@ body {
 
 @media (max-width: 768px) {
     #header {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column; 
         padding: 10px 20px;
     }
 
     #logoimg {
         height: 40px;
-        width: 200px; /* Scale logo for smaller screens */
+        width: 200px; 
     }
 
     #navbar {
-        flex-direction: column; /* Stack navbar links */
+        flex-direction: column; 
         align-items: center;
         margin-top: 10px;
     }
 
     #navbar li {
-        padding: 10px 0; /* Add vertical spacing */
+        padding: 10px 0; 
     }
 
     .search {
-        width: 100%; /* Full width search bar */
+        width: 100%; 
         justify-content: space-between;
         margin-top: 10px;
         padding: 10px;
     }
 
     .search-input {
-        width: 90%; /* Adjust input width */
-        font-size: 14px; /* Smaller font size */
+        width: 90%; 
+        font-size: 14px; 
     }
 }
 
 @media (max-width: 480px) {
     #header {
-        padding: 10px; /* Minimal padding for very small screens */
+        padding: 10px;
     }
 
     #logoimg {
         height: 35px;
-        width: 150px; /* Further scale down the logo */
+        width: 150px;
     }
 
     #navbar li a {
-        font-size: 18px; /* Slightly smaller text for navigation links */
+        font-size: 18px; 
     }
 
     .search-input {
-        font-size: 13px; /* Reduce font size for search bar input */
+        font-size: 13px; 
     }
 }
 
@@ -205,6 +205,7 @@ ul{
 .footercopy
 {
     margin-top: 20px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -358,13 +359,12 @@ ul{
 /*--------------------*/
 
 .btnprodukty {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background: #890095;
     color: white;
     border: none;
     border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     padding: 20px;
     text-align: center;
     cursor: pointer;
@@ -380,7 +380,6 @@ ul{
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 50%;
     margin-bottom: 10px;
 }
 
@@ -406,7 +405,7 @@ ul{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #eeebeb;
     border-bottom: 1px solid #ccc;
     position: sticky;
     top: 0;
@@ -420,13 +419,15 @@ ul{
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
-    margin: 5px;
+    padding: 10px;
+    
 }
 
 .filter-group label {
     margin-right: 10px;
-    font-size: 14;
+    font-size: 18px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
 }
 
@@ -434,17 +435,21 @@ input[type="number"], select {
     padding: 5px;
     font-size: 14px;
     margin-right: 10px;
-    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: none;
+    border-radius: 4px;
 
 }
 
 .filter-button {
     background-color:#9000a0;
-    color: #fff;
+    color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 15px;
     cursor: pointer;
-    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 6px;
     font-family: Arial, sans-serif;
 }
@@ -574,6 +579,7 @@ input[type="number"], select {
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
     border: none;
     font-size: 18px;
@@ -1037,6 +1043,7 @@ img{
     border: 1px solid black;
     padding: 0.8rem 0;
     width: 125px;
+    height: 50px;
     font-family: inherit;
     text-transform: uppercase;
     cursor: pointer;
@@ -1143,9 +1150,9 @@ img{
 
 
 .cart-product-img {
-    width: 70px;  /* Nastav menšiu šírku */
-    height: 70px; /* Nastav menšiu výšku */
-    object-fit: contain; /* Zabezpečí, že obrázok nebude orezaný */
+    width: 70px;  
+    height: 70px; 
+    object-fit: contain;
 }
 
 
@@ -1329,12 +1336,13 @@ img{
     justify-self: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .adminlinkbuton:hover
 {
-    background-color: rgb(180, 0, 180);
+    background-color: rgb(158, 1, 158);
+    transform: scale(1.05);
 }
 
 
@@ -1394,4 +1402,123 @@ img{
 {
     background-color: rgb(154, 0, 154);
     transform: scale(1.05);
+}
+
+
+.adminsetbtn-warning {
+    background-color: limegreen; 
+    color: white;
+    border: none;
+    margin-top: 5px;
+    padding: 8px 12px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.adminsetbtn-warning:hover {
+    background-color: #45a049; 
+}
+
+.adminsetbtn-success {
+    font-weight: bold;
+    margin-top: 5px;
+    background-color: limegreen; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.adminsetbtn-success:hover {
+    background-color: #45a049; 
+}
+
+
+.productremove {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+
+.removebutton {
+    background-color: red;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+}
+
+.removebutton:hover {
+    background-color: rgb(255, 48, 48);
+}
+
+.removetableth {
+    background-color: purple;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Responzívne úpravy */
+@media (max-width: 768px) {
+    .removebutton {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .productremove {
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td, th {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .removetableth {
+        font-size: 12px;
+    }
+
+    td, th {
+        font-size: 14px;
+    }
+
+    .productremove {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }

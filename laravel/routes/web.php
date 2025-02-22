@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\auth;
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/detailpage', [DetailPageController::class, 'index'])->name('detailpage');
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
+Route::post('/products', [ProductsController::class, 'filtration'])->name('products');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
@@ -32,6 +33,7 @@ Route::get('/adminpanel', [AdminPanelController::class, 'adminPanel'])->name('ad
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/produkt/{id}', [ProductsController::class, 'show'])->name('detailpage');
+Route::put('/users/{id}/toggle-admin', [UserController::class, 'toggleAdmin'])->name('users.toggleAdmin');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/addproduct', [AddProductController::class, 'index'])->name('addproduct');
@@ -39,12 +41,16 @@ Route::post('/addproduct', [AddProductController::class, 'index'])->name('addpro
 Route::post('/cart/buy-now/{id}', [CartController::class, 'buyNow'])->name('cart.buyNow');
 Route::get('/product/{id}', [DetailPageController::class, 'show'])->name('product.show');
 Route::get('/product/{id}', [ProductsController::class, 'show'])->name('product.show');
-Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+Route::get('/payment', [PaymentController::class, 'index'])->name('platba');
 Route::post('/payment', [OrderController::class, 'store'])->name('payment');
 Route::post('/addproduct', [ProductsController::class, 'store'])->name('addproduct');
 Route::get('/ordercomplete', [OrderCompleteController::class, 'index'])->name('ordercomplete');
 Route::post('/ordercomplete', [OrderCompleteController::class, 'index'])->name('ordercomplete');
 Route::get('/order-complete', [OrderController::class, 'orderComplete'])->name('order.complete');
+Route::delete('/products/{id}', [ProductsController::class, 'destroy'])->name('destroy');
+Route::get('/removeproducts', [ProductsController::class, 'removeproducts'])->name('removeproducts');
+Route::get('/products/search', [ProductsController::class, 'searchProducts'])->name('searchproducts');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

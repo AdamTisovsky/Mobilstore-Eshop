@@ -12,17 +12,29 @@ class ProductsController extends Controller
 {
     public function index(Request $request)
     {
-        // Filtrovanie produktov podľa kategórie (ak je poslaná)
-        $category_id = $request->query('category_id'); // ID kategórie z query stringu
-
-        $products = Product::with('images', 'category') // Načítaj obrázky a kategóriu
+        
+        $category_id = $request->query('category_id');
+    
+        // Načítanie produktov podľa kategórie
+        $products = Product::with(['images', 'category', 'productAttributes'])
             ->when($category_id, function ($query) use ($category_id) {
-                return $query->where('category_id', $category_id); // Filtruj podľa kategórie
+                return $query->where('category_id', $category_id);
             })
+            ->orderBy('price', 'asc')
             ->get();
-
-        return view('products', compact('products'));
+    
+        // Získanie ID produktov po filtrovaní podľa kategórie
+        $productIds = $products->pluck('id');
+    
+        // Získanie unikátnych značiek len pre tieto produkty
+        $brands = ProductAttribute::whereIn('product_id', $productIds)
+            ->where('attribute_name', 'Vyrobca')
+            ->distinct()
+            ->pluck('attribute_value');
+    
+        return view('products', compact('products', 'category_id', 'brands'));
     }
+    
 
     public function show($id)
     {
@@ -30,7 +42,7 @@ class ProductsController extends Controller
       $product = Product::with('images')->find($id);
 
         if (!$product) {
-             return abort(404); // Show 404 if product is not found
+             return abort(404);
         }
 
        return view('detailpage', compact('product', 'product_attributes'));
@@ -48,11 +60,10 @@ class ProductsController extends Controller
             'category' => 'required|integer|in:1,2,3,4',
             'nazov_param' => 'required|array',
             'hodnota_param' => 'required|array',
-            'hodnota_param.*' => 'required|string|min:1', // Každá hodnota musí byť vyplnená
+            'hodnota_param.*' => 'required|string|min:1',
             'obrazok' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
-        // Uloženie produktu
         $product = Product::create([
             'name' => $request->nazov,
             'description' => $request->popis,
@@ -61,42 +72,115 @@ class ProductsController extends Controller
             'category_id' => $request->category,
         ]);
     
-        // Debugging - Výpis hodnôt do logu pred uložením
         \Log::info('Product ID: ' . $product->id);
         \Log::info('Attributes:', ['nazov_param' => $request->nazov_param, 'hodnota_param' => $request->hodnota_param]);
     
-        // Uloženie parametrov do `product_attributes`
         foreach ($request->nazov_param as $key => $paramName) {
             if (!empty($paramName) && !empty($request->hodnota_param[$key])) {
                 ProductAttribute::create([
                     'product_id' => $product->id,
                     'attribute_name' => $paramName,
-                    'attribute_value' => $request->hodnota_param[$key], // Zmena na správny názov
+                    'attribute_value' => $request->hodnota_param[$key],
                 ]);
             }
         }
 
-            // Uloženie obrázka
-        // Uloženie obrázka
-if ($request->hasFile('obrazok')) {
-    // Získanie pôvodného názvu súboru
-    $fileName = $request->file('obrazok')->getClientOriginalName();
+          
+        if ($request->hasFile('obrazok')) {
+    
+        $fileName = $request->file('obrazok')->getClientOriginalName();
 
-    // Uloženie obrázka do priečinka /app/public/images
-    $request->file('obrazok')->storeAs('images', $fileName, 'public');
+        $request->file('obrazok')->storeAs('images', $fileName, 'public');
 
-    // Uloženie len názvu súboru do databázy
-    Image::create([
-        'product_id' => $product->id,
-        'image_path' => $fileName, // Ukladáme len názov súboru
-    ]);
-}
+        Image::create([
+            'product_id' => $product->id,
+            'image_path' => $fileName, 
+        ]);
+        }
 
-return redirect()->back()->with('success', 'Produkt bol úspešne pridaný.');
+        return redirect()->back()->with('success', 'Produkt bol úspešne pridaný.');
 
 
 
     }
+
+    public function removeproducts()
+    {
+        $products = Product::all(); 
+        return view('removeproducts', compact('products')); 
+    }
+
+
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->route('removeproducts')->with('success', 'Produkt bol odstránený.');
+    }
     
+    public function filtration(Request $request)
+    {
+        
+        // Získanie filtrov z formulára
+        $category_id = $request->input('category_id');
+        $price_min = $request->input('price_min');
+        $price_max = $request->input('price_max');
+        $selected_brand = $request->input('brand'); // "Všetko" = null alebo prázdny string
     
-}
+        // Načítanie produktov podľa kategórie a aplikovanie filtrov
+        $products = Product::with(['images', 'category', 'productAttributes'])
+            ->when($category_id, function ($query) use ($category_id) {
+                return $query->where('category_id', $category_id);
+            })
+            ->when($price_min, function ($query) use ($price_min) {
+                return $query->where('price', '>=', $price_min);
+            })
+            ->when($price_max, function ($query) use ($price_max) {
+                return $query->where('price', '<=', $price_max);
+            })
+            ->when(!empty($selected_brand) && $selected_brand !== "Všetko", function ($query) use ($selected_brand) {
+                return $query->whereHas('productAttributes', function ($query) use ($selected_brand) {
+                    return $query->where('attribute_name', 'Vyrobca')->where('attribute_value', $selected_brand);
+                });
+            })
+            ->orderBy('price', 'asc')
+            ->get();
+    
+        // Získanie unikátnych značiek len pre aktuálne filtrované produkty
+        $productIds = $products->pluck('id');
+    
+        $brands = ProductAttribute::whereIn('product_id', $productIds)
+            ->where('attribute_name', 'Vyrobca')
+            ->distinct()
+            ->pluck('attribute_value');
+    
+        return view('products', compact('products', 'category_id', 'brands', 'selected_brand', 'price_min', 'price_max'));
+    }
+
+        public function searchProducts(Request $request)
+        {
+            $searchQuery = $request->input('query');
+            $category_id = null;
+        
+        
+            // Vyhľadanie produktov s case-insensitive porovnávaním
+            $products = Product::with('images')
+                ->whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($searchQuery) . '%'])
+                ->orderBy('price', 'asc')
+                ->get();
+
+            $productIds = $products->pluck('id');
+
+            $brands = ProductAttribute::whereIn('product_id', $productIds)
+            ->where('attribute_name', 'Vyrobca')
+            ->distinct()
+            ->pluck('attribute_value');
+        
+            return view('products', compact('products', 'searchQuery','brands','category_id'));
+        }
+          
+    }
+    
+

@@ -16,7 +16,6 @@ class UserController extends Controller
             $user->delete();
             return redirect()->back()->with('success', 'User deleted successfully.');
         }
-
         return redirect()->back()->with('error', 'User not found.');
     }
     
@@ -25,4 +24,15 @@ class UserController extends Controller
         'email',
         'password',
     ];
+
+
+
+    public function toggleAdmin($id)
+    {
+        $user = User::findOrFail($id);
+        $user->is_admin = !$user->is_admin; 
+        $user->save();
+
+        return redirect()->back()->with('success', 'Rola používateľa bola aktualizovaná.');
+    }
 }

@@ -6,52 +6,30 @@
 
 <section class="filtracia">
     <div class="containerf">
-        <form action="{{ route('products') }}" method="GET" class="filter-bar">
-            <div class="filter-group">
+        <form action="{{ route('products') }}" method="POST" class="filter-bar">
+        @csrf
+        <div class="filter-group">
                 <label for="price-min">Cena: </label>
-                <input type="number" id="price-min" name="price_min" placeholder="Min">
-                <input type="number" id="price-max" name="price_max" placeholder="Max">
+                <input type="number" name="price_min" id="price_min" value="{{ request('price_min') }}" min="0" step="0.01" placeholder="Min">
+                <input type="number" name="price_max" id="price_max" value="{{ request('price_max') }}" min="0" step="0.01" placeholder="Max">
+
             </div>
 
             <div class="filter-group">
                 <label for="brand">Značka: </label>
                 <select name="brand" id="brand-select">
-                    <option value="">Všetko</option>
-                    <option value="1">Apple</option>
-                    <option value="2">Samsung</option>
-                    <option value="3">Sony</option>
+                    <option value="" {{ request('brand') == '' ? 'selected' : '' }}>Všetko</option>
+                    @foreach($brands as $brand)
+                        <option value="{{ $brand }}" {{ request('brand') == $brand ? 'selected' : '' }}>
+                            {{ $brand }}
+                        </option>
+                    @endforeach
                 </select>
             </div>
 
-            <div class="filter-group">
-                <label for="color">Farba: </label>
-                <select name="color" id="color-select">
-                    <option value="">Všetko</option>
-                    <option value="Black">Čierna</option>
-                    <option value="White">Biela</option>
-                    <option value="Blue">Modrá</option>
-                </select>
-            </div>
 
-            <div class="filter-group">
-                <label for="storage_gb">Úložisko: </label>
-                <select name="storage_gb" id="storage-select">
-                    <option value="">Všetko</option>
-                    <option value="64">64GB</option>
-                    <option value="128">128GB</option>
-                    <option value="256">256GB</option>
-                </select>
-            </div>
 
-            <div class="filter-group">
-                <label for="type">Typ: </label>
-                <select name="type" id="type-select">
-                    <option value="">Všetko</option>
-                    <option value="1">Mobil</option>
-                    <option value="2">Monitor</option>
-                    <option value="3">Televízor</option>
-                </select>
-            </div>
+            <input type="hidden" name="category_id" value="{{ $category_id }}">
 
             <button type="submit" class="filter-button">Zobraziť produkty</button>
         </form>
@@ -60,14 +38,27 @@
 
 <section id="heroProducts">
     @foreach (\App\Models\Category::all() as $category)
+        @php
+            $categoryImages = [
+                1 => '13-removebg-preview.png',
+                2 => 'ae-qled-qn90b-qa75qn90bauxzn-531523268-removebg-preview.png',
+                3 => 'samsung-monitor-led-27-removebg-preview.png',
+                4 => 'asus rogue laptop.png',
+            ];
+            
+            $imagePath = $categoryImages[$category->id] ?? 'default.png'; // Ak obrázok neexistuje, použije sa default.png
+        @endphp
+
         <a href="{{ route('products', ['category_id' => $category->id]) }}">
             <button class="btnprodukty">
-                <img class="btnimg" src="{{ asset('images/' . $category->image_path) }}" alt="{{ $category->name }}"> 
+                <img class="btnimg" src="{{ asset('images/' . $imagePath) }}" alt="{{ $category->name }}"> 
                 <p class="txtbtnproduct">{{ strtoupper($category->name) }}</p>
             </button>
         </a>
     @endforeach
 </section>
+
+
 
 <div class="products">
     <div class="productcontainer">
@@ -88,7 +79,7 @@
                     </div>
                     </a>
                         <div class="product-btns">
-                        <!-- Formulár na pridanie do košíka -->
+                        
                         <form action="{{ route('cart.add', $product->id) }}" method="POST">
                           @csrf
                          <button type="submit" class="btn-cart">
@@ -96,7 +87,7 @@
                          </button>
                          </form>
 
-                        <!-- Formulár na okamžitý nákup -->
+                       
                         <form action="{{ route('cart.buyNow', $product->id) }}" method="POST">
                         @csrf
                         <button type="submit" class="btn-cart">

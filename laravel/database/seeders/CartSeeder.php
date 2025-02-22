@@ -7,12 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class CartSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+ 
     public function run(): void
     {
-        // Fetch user IDs to associate with carts
+       
         $userIds = DB::table('users')->pluck('id')->toArray();
 
         if (empty($userIds)) {

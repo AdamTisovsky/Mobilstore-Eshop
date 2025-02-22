@@ -20,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     protected $attributes = [
-        'is_admin' => false, // Default value for 'is_admin'
+        'is_admin' => false, 
     ];
 
     public function cart()

@@ -17,7 +17,7 @@
         
         <div class="form-group">
             <label for="telefon" class="form-label">Telefónne číslo:</label>
-            <input type="tel" id="telefon" name="telefon" class="form-input" required>
+            <input type="text" id="telefon" name="telefon" class="form-input" required>
         </div>
 
         @if(!Auth::check())
@@ -44,16 +44,16 @@
         
         <div class="form-group">
             <label for="psc" class="form-label">PSČ:</label>
-            <input type="text" id="psc" name="psc" class="form-input" required>
+            <input type="number" id="psc" name="psc" class="form-input" required>
         </div>
         
         <div class="form-group">
             <label for="cislo_domu" class="form-label">Číslo domu:</label>
-            <input type="text" id="cislo_domu" name="cislo_domu" class="form-input" required>
+            <input type="number" id="cislo_domu" name="cislo_domu" class="form-input" required>
         </div>
         
         <div class="form-group full-width">
-            <label for="payment" class="form-label">Spôsob platby:</label>
+            <label for="platba" class="form-label">Spôsob platby:</label>
             <select id="payment" name="payment" class="form-select" required>
                 <option value="dobierka">Hotovosť</option>
                 <option value="karta">Platba kartou</option>
@@ -61,15 +61,16 @@
         </div>
         
         <div class="form-group full-width">
-            <label for="shipping" class="form-label">Spôsob dopravy:</label>
+            <label for="doprava" class="form-label">Spôsob dopravy:</label>
             <select id="shipping" name="shipping" class="form-select" required>
                 <option value="kurier">Kuriér</option>
-                <option value="posta">Pošta</option>
-                <option value="osobne">Osobný odber</option>
+                <option value="osobny_odber">Osobný odber</option>
             </select>
         </div>
+
+        <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
         
-        <a href="{{ route('ordercomplete') }}"><button type="submit" class="form-button">Potvrdiť objednávku</button></a>
+        <button type="submit" class="form-button">Potvrdiť objednávku</button>
     </form>
 </div>
 @endsection

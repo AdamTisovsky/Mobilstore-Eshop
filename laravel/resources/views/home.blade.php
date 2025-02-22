@@ -12,11 +12,3 @@
     </div>
 </section>
 @endsection
-
-@section('custom-js')
-<script>
-    function Klik() {
-        // Add functionality here if needed
-    }
-</script>
-@endsection

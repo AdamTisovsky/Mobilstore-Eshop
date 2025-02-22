@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('payment');
+        $totalPrice = $request->totalPrice; 
+        return view('payment', compact('totalPrice'));
     }
-    
 }

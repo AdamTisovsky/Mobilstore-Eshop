@@ -7,12 +7,12 @@
 
     <title>@yield('title', 'MOBILSTORE.SK')</title>
 
-    <!-- Stylesheets -->
+  
     <link rel="stylesheet" href="{{ asset('css/Style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <!-- Custom Styles -->
+    
     <style>
         body {
             background-size: 1000px; 
@@ -32,12 +32,13 @@
         <img id="logoimg" src="{{ asset('images\logo43.png') }}" class="logo" alt="Logo">
     </a>
 
-        <form>
-            <div class="search">
-                <span class="material-symbols-outlined">search</span>
-                <input class="search-input" type="search" placeholder="Hladaj">
-            </div>
-        </form>
+    <form action="{{ route('searchproducts') }}" method="GET">
+        <div class="search">
+            <span class="material-symbols-outlined">search</span>
+            <input class="search-input" type="search" name="query" placeholder="Hľadaj" value="{{ request('query') }}">
+        </div>
+    </form>
+
 
         <div>
             <ul id="navbar">
@@ -51,25 +52,24 @@
                  @endauth
                 <li><a href="{{ url('/info') }}">INFO</a></li>
                 @guest
-                <!-- Ak používateľ nie je prihlásený -->
+           
                 <li><a href="{{ route('login') }}">PRIHLÁSIŤ SA</a></li>
                 @else
-                <!-- Ak je používateľ prihlásený -->
+              
                 <li><a href="{{ url('/profilepage') }}">PROFIL</a></li>
                 @endguest
                 <li><a href="{{ url('/cart') }}">KOŠIK</a></li>
-                <li><a href="{{ url('/ordercomplete') }}">test</a></li>
                 
             </ul>
         </div>
     </section>
 
-    <!-- Main Content Section -->
+ 
     <main>
         @yield('content')
     </main>
 
-    <!-- Footer Section -->
+
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -93,14 +93,15 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>online shop</h4>
+                    <h4>Online Shop</h4>
                     <ul>
-                        <li><a href="#">Mobily</a></li>
-                        <li><a href="#">Monitory</a></li>
-                        <li><a href="#">Notebooky</a></li>
-                        <li><a href="#">Televízie</a></li>
+                        <li><a href="{{ route('products', ['category_id' => 1]) }}">Mobily</a></li>
+                        <li><a href="{{ route('products', ['category_id' => 3]) }}">Monitory</a></li>
+                        <li><a href="{{ route('products', ['category_id' => 4]) }}">Notebooky</a></li>
+                        <li><a href="{{ route('products', ['category_id' => 2]) }}">Televízie</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
                     <h4>Sociálne siete</h4>
                     <div class="social-links">
@@ -109,7 +110,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <p class="footercopy">&copy;Adam Tisovský 2025</p>
+                    <p class="footercopy">&copy; Adam Tisovský 2025</p>
                 </div>
 
                 
