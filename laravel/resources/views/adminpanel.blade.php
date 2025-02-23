@@ -8,7 +8,6 @@
 <section class="adminbutony">
     <a href="{{ route('addproduct') }}"><button class="adminlinkbuton">Pridať produkt</button></a>
     <a href="{{ route('removeproducts') }}"><button class="adminlinkbuton">Odstrániť produkt</button></a>
-    <a href="{{ route('adminpanel') }}"><button class="adminlinkbuton">Objednávky</button></a>
 </section>
 
 <section id="admin-panel">

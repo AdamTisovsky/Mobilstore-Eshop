@@ -452,10 +452,12 @@ input[type="number"], select {
     font-weight: bold;
     border-radius: 6px;
     font-family: Arial, sans-serif;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .filter-button:hover {
     background-color:#9000a0;
+    transform: scale(1.05);
 }
 
 /*-----profilpage---------*/
@@ -502,16 +504,19 @@ input[type="number"], select {
     color: #fff;
     background-color: #ff0000;
     border: none;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .btnprofilepage:hover
 {
     background-color: #ff5454;
+    transform: scale(1.05);
 }
 
 
@@ -587,6 +592,7 @@ input[type="number"], select {
 
 .btn-danger:hover {
     opacity: 0.8;
+    transform: scale(1.05);
 }
 
 
@@ -759,7 +765,7 @@ input[type="number"], select {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 250px;
     text-align: center;
     background-color: purple;
     color: white;
@@ -768,9 +774,10 @@ input[type="number"], select {
     text-decoration: none;
     font-weight: 700;
     font-size: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
   }
   .checkout-btn:hover {
-    background-color: purple;
+    background-color: rgb(148, 0, 148);
   }
 
   /* Responsive Design */
@@ -1439,6 +1446,7 @@ img{
 
 .adminsetbtn-success:hover {
     background-color: #45a049; 
+    transform: scale(1.05);
 }
 
 
