@@ -13,8 +13,8 @@
                 <div class="col-2">
                     <div class="form-container">
                         <div class="form-btn">
-                            <span onclick="login()">Login</span>
-                            <span onclick="register()">Register</span>
+                            <span onclick="login()">Prihlásenie</span>
+                            <span onclick="register()">Registrácia</span>
                             <hr id="Indicator">
                         </div>
 
@@ -50,7 +50,6 @@
     var Registerform = document.getElementById("Registerform");
     var Indicator = document.getElementById("Indicator");
 
-    // Default state: Login form is visible
     Loginform.style.transform = "translateX(0)";
     Registerform.style.transform = "translateX(300px)";
     Indicator.style.transform = "translateX(0)";

@@ -9,8 +9,9 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id']; // Povolenie mass assignment pre user_id
+    protected $fillable = ['user_id']; 
 
+    /*prepojenie tabulky cart_items*/
     public function items()
     {
         return $this->hasMany(CartItem::class);

@@ -12,6 +12,9 @@ class ProductAttributeSeeder extends Seeder
     public function run(): void
     {
         ProductAttribute::insert([
+
+
+            /*iphone*/
             [
                 'product_id' => 2,
                 'attribute_name' => "Farba",
@@ -157,37 +160,88 @@ class ProductAttributeSeeder extends Seeder
             ],
 
 
-            // Samsung S24 Ultra
             [
                 'product_id' => 1,
                 'attribute_name' => "Farba",
-                'attribute_value' => "Čierna",
+                'attribute_value' => "Šedá",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'product_id' => 1,
                 'attribute_name' => "Úložisko",
-                'attribute_value' => "256GB",
+                'attribute_value' => "512GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'product_id' => 1,
                 'attribute_name' => "Vyrobca",
-                'attribute_value' => "Samsung",
+                'attribute_value' => "Apple",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'product_id' => 1,
                 'attribute_name' => "Rozlíšenie fotoaparátu",
-                'attribute_value' => "200 Mpix",
+                'attribute_value' => "48 Mpix",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'product_id' => 1,
+                'attribute_name' => "Verzia operačného systému",
+                'attribute_value' => "IOS 17",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Samsung S24 Ultra
+            [
+                'product_id' => 21,
+                'attribute_name' => "Farba",
+                'attribute_value' => "Čierna",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'product_id' => 21,
+                'attribute_name' => "Úložisko",
+                'attribute_value' => "256GB",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'product_id' => 21,
+                'attribute_name' => "Vyrobca",
+                'attribute_value' => "Samsung",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'product_id' => 21,
+                'attribute_name' => "Rozlíšenie fotoaparátu",
+                'attribute_value' => "200 Mpix",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'product_id' => 21,
                 'attribute_name' => "Verzia operačného systému",
                 'attribute_value' => "Android 14",
                 'created_at' => now(),
@@ -196,35 +250,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Samsung S23
             [
-                'product_id' => 6,
+                'product_id' => 24,
                 'attribute_name' => "Farba",
                 'attribute_value' => "Čierna",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 6,
+                'product_id' => 24,
                 'attribute_name' => "Úložisko",
                 'attribute_value' => "256GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 6,
+                'product_id' => 24,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Samsung",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 6,
+                'product_id' => 24,
                 'attribute_name' => "Rozlíšenie fotoaparátu",
                 'attribute_value' => "50 Mpix",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 6,
+                'product_id' => 24,
                 'attribute_name' => "Verzia operačného systému",
                 'attribute_value' => "Android 13",
                 'created_at' => now(),
@@ -233,35 +287,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Samsung S25 Ultra
             [
-                'product_id' => 7,
+                'product_id' => 25,
                 'attribute_name' => "Farba",
                 'attribute_value' => "Čierna",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 7,
+                'product_id' => 25,
                 'attribute_name' => "Úložisko",
                 'attribute_value' => "1TB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 7,
+                'product_id' => 25,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Samsung",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 7,
+                'product_id' => 25,
                 'attribute_name' => "Rozlíšenie fotoaparátu",
                 'attribute_value' => "200 Mpix",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 7,
+                'product_id' => 25,
                 'attribute_name' => "Verzia operačného systému",
                 'attribute_value' => "Android 15",
                 'created_at' => now(),
@@ -270,35 +324,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Samsung A55
             [
-                'product_id' => 8,
+                'product_id' => 22,
                 'attribute_name' => "Farba",
                 'attribute_value' => "Čierna",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 8,
+                'product_id' => 22,
                 'attribute_name' => "Úložisko",
                 'attribute_value' => "128GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 8,
+                'product_id' => 22,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Samsung",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 8,
+                'product_id' => 22,
                 'attribute_name' => "Rozlíšenie fotoaparátu",
                 'attribute_value' => "50 Mpix",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 8,
+                'product_id' => 22,
                 'attribute_name' => "Verzia operačného systému",
                 'attribute_value' => "Android 14",
                 'created_at' => now(),
@@ -307,35 +361,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Samsung A35
             [
-                'product_id' => 9,
+                'product_id' => 23,
                 'attribute_name' => "Farba",
                 'attribute_value' => "Čierna",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 9,
+                'product_id' => 23,
                 'attribute_name' => "Úložisko",
                 'attribute_value' => "128GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 9,
+                'product_id' => 23,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Samsung",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 9,
+                'product_id' => 23,
                 'attribute_name' => "Rozlíšenie fotoaparátu",
                 'attribute_value' => "50 Mpix",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 9,
+                'product_id' => 23,
                 'attribute_name' => "Verzia operačného systému",
                 'attribute_value' => "Android 14",
                 'created_at' => now(),
@@ -352,35 +406,35 @@ class ProductAttributeSeeder extends Seeder
 
 
             [
-                'product_id' => 10,
+                'product_id' => 11,
                 'attribute_name' => "Uhlopriečka obrazovky",
                 'attribute_value' => "139cm",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 10,
+                'product_id' => 11,
                 'attribute_name' => "Uhlopriečka v palcoch",
                 'attribute_value' => "55 palcov",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 10,
+                'product_id' => 11,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "LG",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 10,
+                'product_id' => 11,
                 'attribute_name' => "Druh televízorov",
                 'attribute_value' => "OLED",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 10,
+                'product_id' => 11,
                 'attribute_name' => "Rozlíšenie",
                 'attribute_value' => "3840 x 2160",
                 'created_at' => now(),
@@ -389,35 +443,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Samsung QN90B Neo QLED
             [
-                'product_id' => 11,
+                'product_id' => 12,
                 'attribute_name' => "Uhlopriečka obrazovky",
                 'attribute_value' => "165cm",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' =>11,
+                'product_id' =>12,
                 'attribute_name' => "Uhlopriečka v palcoch",
                 'attribute_value' => "65 palcov",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 11,
+                'product_id' => 12,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Samsung",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 11,
+                'product_id' => 12,
                 'attribute_name' => "Druh televízorov",
                 'attribute_value' => "Neo QLED",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 11,
+                'product_id' => 12,
                 'attribute_name' => "Rozlíšenie",
                 'attribute_value' => "3840 x 2160",
                 'created_at' => now(),
@@ -426,35 +480,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Vizio P-Series Quantum
             [
-                'product_id' => 12,
+                'product_id' => 15,
                 'attribute_name' => "Uhlopriečka obrazovky",
                 'attribute_value' => "152cm",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 12,
+                'product_id' => 15,
                 'attribute_name' => "Uhlopriečka v palcoch",
                 'attribute_value' => "60 palcov",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 12,
+                'product_id' => 15,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Vizio",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 12,
+                'product_id' => 15,
                 'attribute_name' => "Druh televízorov",
                 'attribute_value' => "Quantum LED",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 12,
+                'product_id' => 15,
                 'attribute_name' => "Rozlíšenie",
                 'attribute_value' => "3840 x 2160",
                 'created_at' => now(),
@@ -463,35 +517,35 @@ class ProductAttributeSeeder extends Seeder
 
             // TCL 6-Series R646
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'attribute_name' => "Uhlopriečka obrazovky",
                 'attribute_value' => "140cm",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'attribute_name' => "Uhlopriečka v palcoch",
                 'attribute_value' => "55 palcov",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "TCL",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'attribute_name' => "Druh televízorov",
                 'attribute_value' => "QLED",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'attribute_name' => "Rozlíšenie",
                 'attribute_value' => "3840 x 2160",
                 'created_at' => now(),
@@ -500,35 +554,35 @@ class ProductAttributeSeeder extends Seeder
 
             // Sony A8H OLED
             [
-                'product_id' => 14,
+                'product_id' => 13,
                 'attribute_name' => "Uhlopriečka obrazovky",
                 'attribute_value' => "164cm",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 14,
+                'product_id' => 13,
                 'attribute_name' => "Uhlopriečka v palcoch",
                 'attribute_value' => "65 palcov",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 14,
+                'product_id' => 13,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Sony",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 14,
+                'product_id' => 13,
                 'attribute_name' => "Druh televízorov",
                 'attribute_value' => "OLED",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 14,
+                'product_id' => 13,
                 'attribute_name' => "Rozlíšenie",
                 'attribute_value' => "3840 x 2160",
                 'created_at' => now(),
@@ -538,36 +592,44 @@ class ProductAttributeSeeder extends Seeder
 
 
 
+
+
+
+
+
+
+            /*notebooks*/ 
+
             [
-                'product_id' => 15,
+                'product_id' => 16,
                 'attribute_name' => "Vyrobca",
                 'attribute_value' => "Apple",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 15,
+                'product_id' => 16,
                 'attribute_name' => "Operačný systém",
                 'attribute_value' => "macOS",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 15,
+                'product_id' => 16,
                 'attribute_name' => "Veľkosť operačnej pamäte",
                 'attribute_value' => "8GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 15,
+                'product_id' => 16,
                 'attribute_name' => "Úložisko",
                 'attribute_value' => "256GB",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'product_id' => 15,
+                'product_id' => 16,
                 'attribute_name' => "Výdrž batérie",
                 'attribute_value' => "18 hodín",
                 'created_at' => now(),
@@ -575,42 +637,37 @@ class ProductAttributeSeeder extends Seeder
             ],
 
 
-
-
-
-
-
 // Dell XPS 13
 [
-    'product_id' => 16,
+    'product_id' => 17,
     'attribute_name' => "Vyrobca",
     'attribute_value' => "Dell",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 16,
+    'product_id' => 17,
     'attribute_name' => "Operačný systém",
     'attribute_value' => "Windows 11",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 16,
+    'product_id' => 17,
     'attribute_name' => "Veľkosť operačnej pamäte",
     'attribute_value' => "16GB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 16,
+    'product_id' => 17,
     'attribute_name' => "Úložisko",
     'attribute_value' => "512GB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 16,
+    'product_id' => 17,
     'attribute_name' => "Výdrž batérie",
     'attribute_value' => "14 hodín",
     'created_at' => now(),
@@ -619,35 +676,35 @@ class ProductAttributeSeeder extends Seeder
 
 // HP Spectre x360
 [
-    'product_id' => 17,
+    'product_id' => 18,
     'attribute_name' => "Vyrobca",
     'attribute_value' => "HP",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 17,
+    'product_id' => 18,
     'attribute_name' => "Operačný systém",
     'attribute_value' => "Windows 11",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 17,
+    'product_id' => 18,
     'attribute_name' => "Veľkosť operačnej pamäte",
     'attribute_value' => "16GB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 17,
+    'product_id' => 18,
     'attribute_name' => "Úložisko",
     'attribute_value' => "1TB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 17,
+    'product_id' => 18,
     'attribute_name' => "Výdrž batérie",
     'attribute_value' => "17 hodín",
     'created_at' => now(),
@@ -656,35 +713,35 @@ class ProductAttributeSeeder extends Seeder
 
 // Lenovo ThinkPad X1 Carbon Gen 10
 [
-    'product_id' => 18,
+    'product_id' => 19,
     'attribute_name' => "Vyrobca",
     'attribute_value' => "Lenovo",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 18,
+    'product_id' => 19,
     'attribute_name' => "Operačný systém",
     'attribute_value' => "Windows 11 Pro",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 18,
+    'product_id' => 19,
     'attribute_name' => "Veľkosť operačnej pamäte",
     'attribute_value' => "32GB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 18,
+    'product_id' => 19,
     'attribute_name' => "Úložisko",
     'attribute_value' => "1TB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 18,
+    'product_id' => 19,
     'attribute_name' => "Výdrž batérie",
     'attribute_value' => "15 hodín",
     'created_at' => now(),
@@ -693,35 +750,35 @@ class ProductAttributeSeeder extends Seeder
 
 // ASUS ROG Zephyrus G14
 [
-    'product_id' => 19,
+    'product_id' => 20,
     'attribute_name' => "Vyrobca",
     'attribute_value' => "ASUS",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 19,
+    'product_id' => 20,
     'attribute_name' => "Operačný systém",
     'attribute_value' => "Windows 11",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 19,
+    'product_id' => 20,
     'attribute_name' => "Veľkosť operačnej pamäte",
     'attribute_value' => "16GB",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 19,
+    'product_id' => 20,
     'attribute_name' => "Úložisko",
     'attribute_value' => "1TB SSD",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 19,
+    'product_id' => 20,
     'attribute_name' => "Výdrž batérie",
     'attribute_value' => "10 hodín",
     'created_at' => now(),
@@ -736,74 +793,77 @@ class ProductAttributeSeeder extends Seeder
 
 
 
-
+/*monitors*/ 
 
 [
-    'product_id' => 20,
+    'product_id' => 7,
     'attribute_name' => "Vyrobca",
     'attribute_value' => "Samsung",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 20,
+    'product_id' => 7,
     'attribute_name' => "Dotykové",
     'attribute_value' => "nie",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 20,
+    'product_id' => 7,
     'attribute_name' => "Uhlopriečka displeja",
     'attribute_value' => "27 palcov",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 20,
+    'product_id' => 7,
     'attribute_name' => "Pomer strán",
     'attribute_value' => "16:9",
     'created_at' => now(),
     'updated_at' => now()
 ],
 [
-    'product_id' => 20,
+    'product_id' => 7,
     'attribute_name' => "Frekvencia",
     'attribute_value' => "180Hz",
     'created_at' => now(),
     'updated_at' => now()
 ],
+
+
+
     // Dell UltraSharp U2720Q
     [
-        'product_id' => 21,
+        'product_id' => 6,
         'attribute_name' => "Vyrobca",
         'attribute_value' => "Dell",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 21,
+        'product_id' => 6,
         'attribute_name' => "Dotykové",
         'attribute_value' => "nie",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 21,
+        'product_id' => 6,
         'attribute_name' => "Uhlopriečka displeja",
         'attribute_value' => "27 palcov",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 21,
+        'product_id' => 6,
         'attribute_name' => "Pomer strán",
         'attribute_value' => "16:9",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 21,
+        'product_id' => 6,
         'attribute_name' => "Frekvencia",
         'attribute_value' => "60Hz",
         'created_at' => now(),
@@ -812,35 +872,35 @@ class ProductAttributeSeeder extends Seeder
 
     // LG 27GN950-B
     [
-        'product_id' => 22,
+        'product_id' => 8,
         'attribute_name' => "Vyrobca",
         'attribute_value' => "LG",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 8,
         'attribute_name' => "Dotykové",
         'attribute_value' => "nie",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 8,
         'attribute_name' => "Uhlopriečka displeja",
         'attribute_value' => "27 palcov",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 8,
         'attribute_name' => "Pomer strán",
         'attribute_value' => "16:9",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 8,
         'attribute_name' => "Frekvencia",
         'attribute_value' => "144Hz",
         'created_at' => now(),
@@ -849,35 +909,35 @@ class ProductAttributeSeeder extends Seeder
 
     // BenQ PD2700U
     [
-        'product_id' => 22,
+        'product_id' => 9,
         'attribute_name' => "Vyrobca",
         'attribute_value' => "BenQ",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 9,
         'attribute_name' => "Dotykové",
         'attribute_value' => "nie",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 9,
         'attribute_name' => "Uhlopriečka displeja",
         'attribute_value' => "27 palcov",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 9,
         'attribute_name' => "Pomer strán",
         'attribute_value' => "16:9",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 22,
+        'product_id' => 9,
         'attribute_name' => "Frekvencia",
         'attribute_value' => "60Hz",
         'created_at' => now(),
@@ -886,35 +946,35 @@ class ProductAttributeSeeder extends Seeder
 
     // ASUS TUF Gaming VG27AQ
     [
-        'product_id' => 23,
+        'product_id' => 10,
         'attribute_name' => "Vyrobca",
         'attribute_value' => "ASUS",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 23,
+        'product_id' => 10,
         'attribute_name' => "Dotykové",
         'attribute_value' => "nie",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 23,
+        'product_id' => 10,
         'attribute_name' => "Uhlopriečka displeja",
         'attribute_value' => "27 palcov",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 23,
+        'product_id' => 10,
         'attribute_name' => "Pomer strán",
         'attribute_value' => "16:9",
         'created_at' => now(),
         'updated_at' => now()
     ],
     [
-        'product_id' => 23,
+        'product_id' => 10,
         'attribute_name' => "Frekvencia",
         'attribute_value' => "165Hz",
         'created_at' => now(),

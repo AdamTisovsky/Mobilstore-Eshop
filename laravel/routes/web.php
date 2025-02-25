@@ -51,19 +51,15 @@ Route::delete('/products/{id}', [ProductsController::class, 'destroy'])->name('d
 Route::get('/removeproducts', [ProductsController::class, 'removeproducts'])->name('removeproducts');
 Route::get('/products/search', [ProductsController::class, 'searchProducts'])->name('searchproducts');
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified']);
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profilepage', [ProfileController::class, 'edit'])->name('profilepage');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy'); 
 });
-
 
 /*email*/
 
@@ -83,15 +79,6 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification email sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-
-
-
-
-
-
 //Auth::routes();
-
-
-
 
 require __DIR__.'/auth.php';

@@ -99,6 +99,7 @@
                     </div>
                     
                     <div class="product-info">
+                    <a href="{{ route('product.show', $product->id) }}" class="product-name">
                         <div class="product-info-top">
                             <h2 class="sm-tittle">Produkt</h2>
                             <div class="rating">
@@ -109,6 +110,7 @@
                         </div>
                         <a href="#" class="product-name">{{ $product->name }}</a>
                         <p class="product-price">$ {{ number_format($product->price, 2) }}</p>
+                        </a>
                         
                     </div>
                         

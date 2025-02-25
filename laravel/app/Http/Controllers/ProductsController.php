@@ -15,7 +15,7 @@ class ProductsController extends Controller
         
         $category_id = $request->query('category_id');
     
-        // Načítanie produktov podľa kategórie
+        /*Nacitanie produktov podla kategorie*/
         $products = Product::with(['images', 'category', 'productAttributes'])
             ->when($category_id, function ($query) use ($category_id) {
                 return $query->where('category_id', $category_id);
@@ -23,10 +23,10 @@ class ProductsController extends Controller
             ->orderBy('price', 'asc')
             ->get();
     
-        // Získanie ID produktov po filtrovaní podľa kategórie
+        /* ziskanie id produktov po filtrovani podla kategoree*/
         $productIds = $products->pluck('id');
     
-        // Získanie unikátnych značiek len pre tieto produkty
+        /* ziskanie unikatnych značiek len pre tieto produkty*/
         $brands = ProductAttribute::whereIn('product_id', $productIds)
             ->where('attribute_name', 'Vyrobca')
             ->distinct()
@@ -123,13 +123,12 @@ class ProductsController extends Controller
     public function filtration(Request $request)
     {
         
-        // Získanie filtrov z formulára
+        /* yiskanie filtrov z formulara*/
         $category_id = $request->input('category_id');
         $price_min = $request->input('price_min');
         $price_max = $request->input('price_max');
-        $selected_brand = $request->input('brand'); // "Všetko" = null alebo prázdny string
+        $selected_brand = $request->input('brand');
     
-        // Načítanie produktov podľa kategórie a aplikovanie filtrov
         $products = Product::with(['images', 'category', 'productAttributes'])
             ->when($category_id, function ($query) use ($category_id) {
                 return $query->where('category_id', $category_id);
@@ -148,7 +147,7 @@ class ProductsController extends Controller
             ->orderBy('price', 'asc')
             ->get();
     
-        // Získanie unikátnych značiek len pre aktuálne filtrované produkty
+        /* ziskanie unikatnych znaciek len pre filtrovane produkty*/
         $productIds = $products->pluck('id');
     
         $brands = ProductAttribute::whereIn('product_id', $productIds)
@@ -165,7 +164,7 @@ class ProductsController extends Controller
             $category_id = null;
         
         
-            // Vyhľadanie produktov s case-insensitive porovnávaním
+            /* Vyhladanie produktov case insensitive */
             $products = Product::with('images')
                 ->whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($searchQuery) . '%'])
                 ->orderBy('price', 'asc')

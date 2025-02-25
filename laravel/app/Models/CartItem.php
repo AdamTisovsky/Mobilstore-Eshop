@@ -17,11 +17,13 @@ class CartItem extends Model
         'quantity'
     ];
 
+    /*prepojenie tabulky kosiku*/
     public function cart()
     {
         return $this->belongsTo(Cart::class);
     }
 
+    /*prepojenie tabulky produktov*/
     public function product()
     {
         return $this->belongsTo(Product::class);

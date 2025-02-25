@@ -53,7 +53,7 @@
                 <li><a href="{{ url('/info') }}">INFO</a></li>
                 @guest
            
-                <li><a href="{{ route('login') }}">PRIHLÁSIŤ SA</a></li>
+                <li><a href="{{ route('login') }}">PRIHLÁSENIE</a></li>
                 @else
               
                 <li><a href="{{ url('/profilepage') }}">PROFIL</a></li>

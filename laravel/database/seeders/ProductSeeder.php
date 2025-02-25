@@ -66,6 +66,12 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now() 
             ],
+
+
+
+
+
+            /*monitory*/
             [
                 'id' => 6,
                 'name' => 'Dell UltraSharp U2720Q',
@@ -116,6 +122,16 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now() 
             ],
+
+
+
+
+
+
+
+
+
+
             [
                 'id' => 11,
                 'name' => 'LG OLED C1 Series',
@@ -166,6 +182,20 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now() 
             ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             [
                 'id' => 16,
                 'name' => 'Apple MacBook Air',
@@ -216,6 +246,17 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+
+
+
+
+
+
+
+
+
+
+            
             [
                 'id' => 21,
                 'name' => 'Samsung Galaxy S24 Ultra S928B 12GB/256GB',

@@ -9,10 +9,8 @@ class Address extends Model
 {
     use HasFactory;
 
-    // Define the table name (optional if it follows Laravel's convention)
     protected $table = 'address';
 
-    // Define the fillable attributes for mass assignment
     protected $fillable = [
         'customer_id',
         'country',
@@ -22,7 +20,7 @@ class Address extends Model
         'home_number'
     ];
 
-    // Define the relationship with the 'Customer' model (one-to-one)
+    /*prepojenie tabulky customers*/
     public function customer()
     {
         return $this->belongsTo(Customer::class);
