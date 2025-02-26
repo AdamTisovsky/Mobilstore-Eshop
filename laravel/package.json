@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "production": "mix --production",
+        "production": "npx mix --production",
         "build": "vite build",
         "dev": "vite"
     },
