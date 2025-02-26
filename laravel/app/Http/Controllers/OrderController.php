@@ -82,7 +82,7 @@ class OrderController extends Controller
     public function moveCartToOrder($userId, $orderId)
     {
         if ($userId) {
-            // Prihlásený – presunieme z databázy
+            
             $cart = Cart::where('user_id', $userId)->first();
 
             if (!$cart) {
@@ -91,7 +91,7 @@ class OrderController extends Controller
 
             $cartItems = CartItem::where('cart_id', $cart->id)->get();
         } else {
-            // Neprihlásený – presunieme zo session
+            
             $cartItems = collect(session('cart', []));
         }
 

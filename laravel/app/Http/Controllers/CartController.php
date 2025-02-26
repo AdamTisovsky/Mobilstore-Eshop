@@ -61,7 +61,6 @@ class CartController extends Controller
                 }
             }
     
-            // ✅ Aktualizácia skladu
             if ($restoredQuantity > 0) {
                 $product = Product::findOrFail($id);
                 $product->stock += $restoredQuantity;
@@ -102,7 +101,6 @@ class CartController extends Controller
                 ]);
             }
         } else {
-            // Neprihlásený používateľ – pridáme do session
             $cart = session('cart', []);
             $found = false;
     
@@ -136,7 +134,7 @@ class CartController extends Controller
 
 public function buyNow($id)
 {
-    $this->add($id); // Voláme existujúcu metódu add() na pridanie do košíka
+    $this->add($id);
 
     return redirect()->route('cart')->with('success', 'Produkt bol pridaný do košíka. Skontrolujte objednávku.');
 }
